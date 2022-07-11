@@ -1,0 +1,63 @@
+BR - Topic: v1/devices/me/telemetry
+Message: b'{"device": "Device_1", "telemetry": {"temperature": 19, "humidity": 8}}'
+
+Device - gateway
+Telemetry - {"temperature":51,"humidity":95}
+
+///////////////////////////////////////////////////////////////////////////////////
+DOCS OK
+TB - Topic: v1/gateway/rpc
+Message: b'{"device":"Device_1","data":{"id":2,"method":"setValue","params":false}}'
+
+Device - Device_1
+Button
+
+///////////////////////////////////////////////////////////////////////////////////
+ME
+BR - Topic: v1/gateway/attributes
+Message: b'{"Device_1": {"temperature": 7, "humidity": 58}}'
+DOCS
+Topic: v1/gateway/attributes
+Message: {"Device A":{"attribute1":"value1", "attribute2": 42}, "Device B":{"attribute1":"value1", "attribute2": 42}}
+
+Not working
+
+///////////////////////////////////////////////////////////////////////////////////////
+ME
+BR - Topic: v1/gateway/telemetry
+Message: b'{
+    "Device_1": [
+            {"values": 
+                {"temperature": 15, "humidity": 40}
+            }
+        ]
+    }'
+DOCS
+Topic: v1/gateway/telemetry
+{
+  "Device A": [
+    {
+      "ts": 1483228800000,
+      "values": {
+        "temperature": 42,
+        "humidity": 80
+      }
+    },
+    {
+      "ts": 1483228801000,
+      "values": {
+        "temperature": 43,
+        "humidity": 82
+      }
+    }
+  ],
+  "Device B": [
+    {
+      "ts": 1483228800000,
+      "values": {
+        "temperature": 42,
+        "humidity": 80
+      }
+    }
+  ]
+}
