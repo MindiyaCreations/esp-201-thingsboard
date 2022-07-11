@@ -41,7 +41,7 @@ You should download the [Arduino IDE](https://docs.arduino.cc/).
 
 The DHT sensor should be connected to the female pin header with the net like thing looking the ESP board
 
-![ESP 8266 201 development board](https://github.com/MindiyaCreations/esp-201-thingsboard/blob/main/Main/Schematic.png)
+![ESP 8266 201 development board](https://github.com/MindiyaCreations/esp-201-thingsboard/blob/main/ESP8266-201-Board-init/Schematic.png)
 
 ## Pin numbers
 
